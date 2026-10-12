@@ -45,7 +45,25 @@ API credential fields are placeholders only: NEWSAPI_KEY, OPENAI_API_KEY, and HU
 
 ## Screenshots
 
-No screenshots are checked into the repository yet. After starting the app, use Windows Snipping Tool (or the OS screenshot shortcut) to capture the real Home/Discover, Article Analysis, Knowledge Graph, and Compare screens. Save the PNGs in a new screenshots directory as home.png, analysis.png, knowledge-graph.png, and compare.png, then add Markdown image references here. Do not present sample or fabricated articles as live reporting.
+### Home / Discover
+
+![KnowBrief home and latest news](screenshots/Screenshot%202026-10-10%20135712.png)
+
+### Article Analysis
+
+![KnowBrief article analysis](screenshots/Screenshot%20(49).png)
+
+### Knowledge Graph
+
+![KnowBrief knowledge graph](screenshots/Screenshot%20(50).png)
+
+### Extracted Knowledge Triples
+
+![KnowBrief extracted knowledge triples](screenshots/Screenshot%20(51).png)
+
+### Saved Articles
+
+![KnowBrief saved articles](screenshots/Screenshot%20(52).png)
 
 ## Technology
 
