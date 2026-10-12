@@ -15,6 +15,12 @@ services:
       - DATABASE_URL=sqlite:////app/data/knowledge_base.db
       - REQUEST_TIMEOUT_SECONDS=15
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      start_period: 30s
+      retries: 6
 
   frontend:
     build:
@@ -24,5 +30,6 @@ services:
     ports:
       - "5173:80"
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     restart: unless-stopped

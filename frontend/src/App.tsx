@@ -29,6 +29,20 @@ export function App() {
     refreshStats();
   }, [activeTab]);
 
+  useEffect(() => {
+    const pageTitles: Record<string, string> = {
+      dashboard: 'From News to Connected Knowledge',
+      discover: 'Discover News',
+      analysis: 'Article Analysis',
+      graph: 'Knowledge Graph',
+      compare: 'Compare Articles',
+      history: 'Saved Articles',
+      insights: 'Technical Insights',
+      settings: 'Settings',
+    };
+    document.title = `${pageTitles[activeTab] || 'KnowBrief'} | KnowBrief`;
+  }, [activeTab]);
+
   const handleNavigate = (tab: string, articleId?: number) => {
     if (articleId !== undefined) {
       setSelectedArticleId(articleId);
@@ -91,23 +105,8 @@ export function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800 bg-[#171717] py-6 text-center text-xs text-slate-400">
-        <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p>© 2026 AI News-to-Knowledge Converter • Academic NLP Project</p>
-          <div className="flex items-center space-x-4 text-slate-400">
-            <span>spaCy 3.8</span>
-            <span>•</span>
-            <span>NLTK</span>
-            <span>•</span>
-            <span>scikit-learn</span>
-            <span>•</span>
-            <span>NetworkX</span>
-            <span>•</span>
-            <span>FastAPI</span>
-            <span>•</span>
-            <span>React + Vite</span>
-          </div>
-        </div>
+      <footer className="border-t border-slate-800 bg-[#171717] py-5 text-center text-xs text-slate-400">
+        <p>© 2026 KnowBrief</p>
       </footer>
     </div>
   );

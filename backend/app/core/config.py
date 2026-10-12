@@ -3,7 +3,7 @@ from pathlib import Path
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "AI News-to-Knowledge Converter"
+    PROJECT_NAME: str = "KnowBrief"
     VERSION: str = "1.0.0"
     API_V1_STR: str = "/api"
     
@@ -27,7 +27,7 @@ class Settings(BaseSettings):
     # Request limits and timeouts
     REQUEST_TIMEOUT_SECONDS: int = 12
     MAX_ARTICLE_CHARS: int = 150000
-    USER_AGENT: str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 (AI-News-Knowledge-Bot/1.0)"
+    USER_AGENT: str = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 (KnowBrief/1.0)"
     
     # Optional Keys
     NEWSAPI_KEY: str | None = None

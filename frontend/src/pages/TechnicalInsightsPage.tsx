@@ -104,11 +104,11 @@ export const TechnicalInsightsPage: React.FC = () => {
       <div>
         <div className="flex items-center space-x-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-1">
           <Code2 className="w-4 h-4" />
-          <span>Academic System Architecture</span>
+          <span>How it works</span>
         </div>
-        <h1 className="text-2xl font-bold text-white tracking-tight">NLP Processing Pipeline & Technical Insights</h1>
+        <h1 className="text-2xl font-bold text-white tracking-tight">Processing Pipeline</h1>
         <p className="text-xs text-slate-400 mt-1 max-w-3xl">
-          Complete end-to-end breakdown of Natural Language Processing algorithms, graph theory models, and linguistic heuristics powering the AI News-to-Knowledge Converter.
+          See how articles become summaries, entities, events, relationships, and knowledge graphs.
         </p>
       </div>
 
@@ -146,7 +146,7 @@ export const TechnicalInsightsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Academic Highlights & FAQ */}
+      {/* Extraction notes */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="rounded-2xl glass-panel border border-slate-800 p-6 bg-slate-950/80">
           <h3 className="text-sm font-bold text-white mb-3 flex items-center space-x-2">

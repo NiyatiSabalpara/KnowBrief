@@ -20,7 +20,16 @@ export const EditorialHome: React.FC<{ onNavigate: (tab: string, articleId?: num
     try {
       const result = await api.searchNews({ category: selected === 'Top Stories' ? undefined : (categoryFilters[selected] || selected), limit: 30 });
       setArticles(result.articles || []);
-    } catch (e: any) { setError(e?.code === 'ECONNABORTED' || e?.code === 'ETIMEDOUT' ? 'News is taking too long to respond. Check that the news backend is running, then try again.' : e?.response?.data?.detail || e?.message || 'News could not be loaded. Please try again.'); }
+    } catch (e: any) {
+      const status = e?.response?.status;
+      setError(
+        e?.code === 'ECONNABORTED' || e?.code === 'ETIMEDOUT'
+          ? 'News is taking too long to respond. Check that the news backend is running, then try again.'
+          : status === 502 || status === 503 || status === 504
+            ? 'The news service is not ready yet. Start or restart the backend, then try again.'
+            : e?.response?.data?.detail || e?.message || 'News could not be loaded. Please try again.'
+      );
+    }
     finally { setLoading(false); }
   };
   useEffect(() => { void load(category); }, [category]);
@@ -33,7 +42,7 @@ export const EditorialHome: React.FC<{ onNavigate: (tab: string, articleId?: num
   return <div className="editorial-home">
     <div className="date-line"><span>{localDate}</span><span>Independent perspective. Connected knowledge.</span><button onClick={() => void load(category)} disabled={loading} className="refresh-link"><RefreshCw size={14} className={loading ? 'spin' : ''} /> Refresh</button></div>
     <div className="section-tabs" aria-label="News categories">{sections.map((item, i) => <button key={item} onClick={() => setCategory(item)} className={category === item ? 'selected' : ''}>{item}</button>)}</div>
-    <div className="editorial-heading"><div><span className="eyebrow">THE DAILY BRIEFING</span><h1>Stories that shape<br className="desktop-break"/> the way we see the world.</h1></div><p>Real reporting, made easier to explore.<br/>Every story connected to the facts within it.</p></div>
+    <div className="editorial-heading"><div><span className="eyebrow">THE DAILY BRIEFING</span><h1>Stories that shape<br className="desktop-break"/> the way we see the world.</h1></div><p>From News to Connected Knowledge</p></div>
     {loading ? <div className="editorial-state"><RefreshCw className="spin" /><p>Gathering the latest stories from your publishers…</p></div> : error ? <div className="editorial-state error-state"><p>{error}</p><button className="gold-button" onClick={() => void load(category)}>Try again</button></div> : articles.length === 0 ? <div className="editorial-state"><p>No stories are available in this section right now.</p><button className="gold-button" onClick={() => setCategory('Top Stories')}>View top stories</button></div> : <>
       <section className="lead-grid" aria-label="Featured news">
         <article className="lead-story" onClick={() => analyze(featured)}>

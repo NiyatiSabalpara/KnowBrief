@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
-logger = logging.getLogger("ai_news_app")
+logger = logging.getLogger("knowbrief")
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -34,7 +34,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="Academic NLP Mini-Project: AI News-to-Knowledge Converter with genuine NLP algorithms and Knowledge Graph generation.",
+    description="From News to Connected Knowledge. Explore summaries, entities, events, relationships, and knowledge graphs extracted from reporting.",
     lifespan=lifespan
 )
 
@@ -62,7 +62,7 @@ def health_check():
 @app.get("/")
 def root():
     return {
-        "message": "AI News-to-Knowledge Converter Backend API is active.",
+        "message": "KnowBrief API is active.",
         "docs_url": "/docs",
         "health_check": "/api/health"
     }

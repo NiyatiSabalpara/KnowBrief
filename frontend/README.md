@@ -1,6 +1,6 @@
 # Frontend
 
-The frontend is the React, TypeScript, and Vite client for AI News-to-Knowledge Converter.
+The frontend is the React, TypeScript, and Vite client for KnowBrief.
 
 For installation, API setup, supported features, and application usage, see the [project README](../README.md).
 

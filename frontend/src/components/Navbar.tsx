@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, Search, Brain, Network, GitCompare, History, Settings as SettingsIcon, Cpu, X } from 'lucide-react';
+import { KnowBriefLogo } from './KnowBriefLogo';
 
 interface NavbarProps {
   activeTab: string;
@@ -11,36 +12,28 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab, analyze
   const [menuOpen, setMenuOpen] = useState(false);
   const navItems = [
     { id: 'dashboard', label: 'Home' },
-    { id: 'discover', label: 'Discover News' },
-    { id: 'analysis', label: 'Article Analysis', icon: Brain },
+    { id: 'discover', label: 'Discover' },
+    { id: 'analysis', label: 'Analysis', icon: Brain },
     { id: 'graph', label: 'Knowledge Graph', icon: Network },
-    { id: 'compare', label: 'Compare Articles', icon: GitCompare },
-    { id: 'history', label: 'Saved Articles', icon: History, badge: analyzedCount },
+    { id: 'compare', label: 'Compare', icon: GitCompare },
+    { id: 'history', label: 'Saved', icon: History, badge: analyzedCount },
   ];
   const secondaryItems = [
     { id: 'insights', label: 'Technical Insights', icon: Cpu },
-    { id: 'settings', label: 'Settings & Data Sources', icon: SettingsIcon },
+    { id: 'settings', label: 'Settings', icon: SettingsIcon },
   ];
 
   return (
     <header className="w-full bg-[#171717]">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="masthead flex items-center justify-between min-h-[84px] gap-4">
-          {/* Brand Logo */}
-          <div 
+          <button
             onClick={() => setActiveTab('dashboard')}
-            className="flex items-center gap-3 cursor-pointer group"
+            aria-label="KnowBrief home"
+            className="flex shrink-0 items-center rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#ffd429]"
           >
-            <div className="w-10 h-10 rounded-full border border-[#ffd429]/60 flex items-center justify-center">
-                <Brain className="w-5 h-5 text-[#ffd429] group-hover:scale-110 transition-transform" />
-              </div>
-            <div>
-              <div className="flex items-center gap-1.5">
-                <span className="wordmark text-[27px] sm:text-[32px] text-white">Knowledge</span>
-              </div>
-              <p className="text-[10px] sm:text-[11px] tracking-[.16em] uppercase text-slate-400">AI-powered news intelligence</p>
-            </div>
-          </div>
+            <KnowBriefLogo className="h-10 w-[154px] sm:w-[190px]" />
+          </button>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-1">

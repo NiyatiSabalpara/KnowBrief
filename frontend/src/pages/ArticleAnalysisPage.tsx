@@ -588,7 +588,7 @@ export const ArticleAnalysisPage: React.FC<ArticleAnalysisPageProps> = ({ articl
 
                   {chain.resolved_sentence_examples.length > 0 && (
                     <div className="mt-3 space-y-1.5 pt-2 border-t border-slate-800">
-                      <span className="text-[10px] text-slate-400 uppercase font-semibold">Sentence Resolution Demonstration:</span>
+                      <span className="text-[10px] text-slate-400 uppercase font-semibold">Sentence Resolution:</span>
                       {chain.resolved_sentence_examples.map((ex, exIdx) => (
                         <div key={exIdx} className="p-2.5 rounded bg-slate-950 text-xs border border-slate-800/80">
                           <div className="text-slate-400 text-[11px] line-through">"{ex.original_sentence}"</div>

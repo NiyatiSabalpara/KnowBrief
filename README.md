@@ -1,8 +1,8 @@
-# AI News-to-Knowledge Converter
+# KnowBrief
 
-An academic news analysis application that turns article text into structured NLP outputs: summaries, named entities, keywords, topic labels, events, subject–predicate–object relationships, and interactive knowledge graphs. It combines a React and TypeScript frontend with a FastAPI backend, spaCy and scikit-learn components, and local SQLite persistence.
+From News to Connected Knowledge. KnowBrief turns reporting into summaries, named entities, keywords, topics, events, relationships, and interactive knowledge graphs. It combines a React and TypeScript frontend with a FastAPI backend, spaCy and scikit-learn components, and local SQLite persistence.
 
-> This is a research and portfolio project. NLP outputs are automatically extracted and can be incomplete or incorrect; verify claims against the linked source text.
+> Extracted results can be incomplete or incorrect. Verify claims against the linked source text.
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
@@ -177,7 +177,7 @@ Copy .env.example to backend/.env for local backend configuration. The backend r
 
 | Variable | Example/default | Use |
 | --- | --- | --- |
-| PROJECT_NAME | AI News-to-Knowledge Converter | FastAPI title |
+| PROJECT_NAME | KnowBrief | FastAPI title |
 | VERSION | 1.0.0 | API version string |
 | API_V1_STR | /api | API route prefix |
 | DATABASE_URL | sqlite:///knowledge_base.db | SQLAlchemy database URL |

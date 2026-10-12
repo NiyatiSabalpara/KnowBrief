@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the AI News-to-Knowledge Converter. Contributions should preserve source attribution and distinguish extracted claims from verified facts.
+Thanks for helping improve KnowBrief. Contributions should preserve source attribution and distinguish extracted claims from verified facts.
 
 ## Development setup
 

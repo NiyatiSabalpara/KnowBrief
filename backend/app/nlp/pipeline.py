@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 class NLPPipeline:
     """
     End-to-End Modular NLP Processing Pipeline:
-    Executes each stage, records execution times and status runs for academic inspection,
+    Executes each stage and records timings and status for debugging and performance review,
     and returns a structured knowledge object.
     """
 

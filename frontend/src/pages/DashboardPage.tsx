@@ -9,7 +9,6 @@ import {
   RefreshCw, 
   TrendingUp, 
   Globe, 
-  Sparkles,
   Search,
   PlusCircle,
   ExternalLink
@@ -108,16 +107,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate }) => {
       <div className="relative rounded-2xl glass-panel border border-slate-800 p-6 sm:p-8 overflow-hidden bg-gradient-to-r from-slate-900 via-slate-900/90 to-emerald-950/40">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="flex items-center space-x-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">
-              <Sparkles className="w-4 h-4" />
-              <span>Academic NLP Mini-Project</span>
-            </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              AI News-to-Knowledge Converter
+              KnowBrief
             </h1>
             <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-              Transform live news articles into structured knowledge graphs, entity networks, 
-              event frames, and subject-predicate-object triples using pure NLP algorithms (spaCy, NLTK, TF-IDF, TextRank, and NetworkX).
+              Turn news articles into summaries, entities, events, relationships, and interactive knowledge graphs.
             </p>
 
             {/* Quick Action Buttons */}
@@ -127,14 +121,14 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate }) => {
                 className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-xs shadow-lg shadow-emerald-500/25 transition-all"
               >
                 <Search className="w-4 h-4" />
-                <span>Discover & Ingest News</span>
+                <span>Discover News</span>
               </button>
               <button
                 onClick={() => onNavigate('graph')}
                 className="flex items-center space-x-2 px-4 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-white font-medium text-xs border border-slate-700 transition"
               >
                 <Network className="w-4 h-4 text-emerald-400" />
-                <span>Explore Global Knowledge Graph</span>
+                <span>Explore Knowledge Graph</span>
               </button>
               <button
                 onClick={() => onNavigate('compare')}
@@ -185,7 +179,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate }) => {
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-sm font-bold text-white">Analyzed Topic Distribution</h3>
-              <p className="text-xs text-slate-400">Classified across 10 academic and industry domains</p>
+              <p className="text-xs text-slate-400">Across 10 topic areas</p>
             </div>
             <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30">
               Cosine Taxonomy
